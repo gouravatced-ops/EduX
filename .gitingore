@@ -1,0 +1,63 @@
+####################################
+# OS / Editor
+####################################
+.DS_Store
+Thumbs.db
+*.log
+*.swp
+*.swo
+.idea/
+.vscode/
+.vs/
+
+####################################
+# Environment files
+####################################
+.env
+.env.*
+!.env.example
+
+####################################
+# Frontend (Angular 17) - fX/
+####################################
+fX/node_modules/
+fX/dist/
+fX/.angular/
+fX/.cache/
+fX/coverage/
+fX/.sass-cache/
+fX/npm-debug.log*
+fX/yarn-error.log*
+fX/angular-error.log*
+
+####################################
+# Backend (Node.js) - sX/
+####################################
+sX/node_modules/
+sX/logs/
+sX/*.log
+sX/npm-debug.log*
+sX/yarn-error.log*
+sX/pnpm-debug.log*
+
+####################################
+# Build / Runtime
+####################################
+dist/
+build/
+.tmp/
+.cache/
+
+####################################
+# Testing
+####################################
+coverage/
+.nyc_output/
+
+####################################
+# Lock files (optional – keep only one)
+####################################
+# Uncomment if you DON'T want lock files
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
