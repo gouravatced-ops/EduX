@@ -1,0 +1,27 @@
+🅰️ ANGULAR SIDE (IMPORTANT)
+✅ Store Access Token
+localStorage ❌
+sessionStorage ❌
+memory ✔️
+
+✅ Interceptor Flow
+401 → call refresh-token → retry original request
+
+🔥 EXTRA SECURITY (RECOMMENDED)
+
+✔ Rotate refresh token on every use
+✔ IP + UserAgent binding
+✔ Logout → delete refresh token
+✔ CSRF protection
+✔ HTTPS only
+
+❌ WHAT NOT TO DO
+
+🚫 Long lived JWT
+🚫 JWT in localStorage
+🚫 Refresh token in response JSON
+🚫 No rotation
+
+🧾 FINAL VERDICT (ONE LINE)
+
+JWT + Refresh Token (Opaque) + HttpOnly Cookie + Rotation = BEST & SECURE
