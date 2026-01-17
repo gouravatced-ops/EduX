@@ -3,7 +3,7 @@ const apiResponse = require("../utils/apiResponse");
 
 exports.getUsers = async (req, res) => {
   try {
-    const [rows] = await db.query("SELECT id , username, email FROM users");
+    const [rows] = await db.query("SELECT * FROM users");
     return apiResponse.success(
       res,
       "users",
