@@ -1,0 +1,54 @@
+<div class="p-4">
+
+  <h2 class="text-xl font-semibold mb-4">Users List</h2>
+
+  <!-- Loading -->
+  <div *ngIf="loading" class="text-blue-600">
+    Loading users...
+  </div>
+
+  <!-- Error -->
+  <div *ngIf="errorMessage" class="text-red-600">
+    {{ errorMessage }}
+  </div>
+
+  <!-- Table -->
+  <table *ngIf="!loading && users.length"
+         class="w-full border border-gray-300 text-sm">
+
+    <thead class="bg-gray-100">
+      <tr>
+        <th class="border px-3 py-2">#</th>
+        <th class="border px-3 py-2">Username</th>
+        <th class="border px-3 py-2">Email</th>
+        <th class="border px-3 py-2">Mobile</th>
+        <th class="border px-3 py-2">Role</th>
+        <th class="border px-3 py-2">Status</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let user of users; index as i">
+        <td class="border px-3 py-2">{{ i + 1 }}</td>
+        <td class="border px-3 py-2">{{ user.username }}</td>
+        <td class="border px-3 py-2">{{ user.email }}</td>
+        <td class="border px-3 py-2">{{ user.mobile }}</td>
+        <td class="border px-3 py-2">{{ user.role }}</td>
+        <td class="border px-3 py-2">
+          <span
+            [class.text-green-600]="user.status === '1'"
+            [class.text-red-600]="user.status !== '1'">
+            {{ user.status === '1' ? 'Active' : 'Inactive' }}
+          </span>
+        </td>
+      </tr>
+    </tbody>
+
+  </table>
+
+  <!-- No Data -->
+  <div *ngIf="!loading && !users.length" class="text-gray-500">
+    No users found.
+  </div>
+
+</div>
